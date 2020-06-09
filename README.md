@@ -43,7 +43,9 @@ Android Studio (version 3.6)
 ```yaml
 # add this line to your dependencies
 dependencies:
-  toponad: ^0.1.1
+  toponad:
+    git:
+      url: https://github.com/oywenjiao/toponad.git
 ```
 
 ## 环境配置
