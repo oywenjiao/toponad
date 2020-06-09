@@ -31,4 +31,28 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    sourceSets {
+        main {
+            res.srcDirs += 'res'
+        }
+    }
+    packagingOptions {
+        merge 'res/values/values.xml'
+        merge 'AndroidManifest.xml'
+        merge 'R.txt'
+        merge 'proguard.txt'
+        merge 'classes.jar'
+    }
+}
+
+repositories{
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.browser:browser:1.0.0'
 }

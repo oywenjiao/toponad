@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:toponad/toponad.dart';
+import 'package:toponad/toponad.dart' as Toponad;
 
 void main() {
   const MethodChannel channel = MethodChannel('toponad');
@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await Toponad.platformVersion, '42');
+    expect(Toponad.platformVersion, '42');
   });
 }

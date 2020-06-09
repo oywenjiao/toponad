@@ -1,13 +1,4 @@
-import 'dart:async';
+library toponad;
 
-import 'package:flutter/services.dart';
-
-class Toponad {
-  static const MethodChannel _channel =
-      const MethodChannel('toponad');
-
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export 'package:toponad/toponad_main.dart';
+export 'package:toponad/toponad_response.dart';
