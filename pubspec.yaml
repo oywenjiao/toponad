@@ -2,7 +2,7 @@ name: toponad
 description: A new Flutter plugin.
 version: 0.0.1
 author: OuyangWenjiao<wenjiao8605@126.com>
-homepage:
+homepage: https://github.com/oywenjiao/toponad
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
