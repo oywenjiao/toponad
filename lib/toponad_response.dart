@@ -4,6 +4,9 @@ const String _errStr = "errStr";
 
 typedef BaseToponadResponse _ToponadResponseInvoker(Map argument);
 
+/*
+** 映射原生发送的数据给响应池
+ */
 Map<String, _ToponadResponseInvoker> _nameAndResponseMapper = {
   "onRewardResponse": (Map argument) =>
       OnRewardResponse.fromMap(argument),
@@ -17,7 +20,7 @@ class BaseToponadResponse {
 
   BaseToponadResponse._(this.errCode, this.errStr);
 
-  /// create response from response pool
+  /// 创建响应池
   factory BaseToponadResponse.create(String name, Map argument) =>
       _nameAndResponseMapper[name](argument);
 }
