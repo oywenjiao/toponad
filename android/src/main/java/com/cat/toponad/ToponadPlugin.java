@@ -26,15 +26,15 @@ import com.anythink.core.api.ATSDK;
 /***************************************************************************************************
  ***                                   Flutter Plugin Core                                       ***
  ***************************************************************************************************
- *
- *                FlutterPlugin:
- *
- *                MethodCallHandler: 隧道调用方法
- *
- *                ActivityAware:
- *
+ *                                                                                                 *
+ *                FlutterPlugin:                                                                   *
+ *                                                                                                 *
+ *                MethodCallHandler: 隧道调用方法                                                    *
+ *                                                                                                 *
+ *                ActivityAware:                                                                   *
+ *                                                                                                 *
  *-------------------------------------------------------------------------------------------------*
- * ToponadPlugin
+ * ToponadPlugin                                                                                   *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 public class ToponadPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /*

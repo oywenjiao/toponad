@@ -133,15 +133,42 @@ Toponad.toponadResponseEventHandler.listen((value)
 | rewardRes  | 回调结果      |    / |
 
 #### callType 回调类别参数说明
+| 参数值 | 描述 | 回调信息 |
+| :----: | :----: | :-----: |
+| onRewardedVideoAdFailed | 广告加载失败 | AdError |
+| onRewardedVideoAdPlayStart | 广告刷新回调 | ATAdInfo |
+| onRewardedVideoAdPlayEnd | 广告播放结束 | ATAdInfo |
+| onRewardedVideoAdPlayFailed | 广告播放失败 | ATAdInfo |
+| onRewardedVideoAdClosed | 广告关闭回调 | ATAdInfo |
+| onRewardedVideoAdPlayClicked | 广告点击回调 | ATAdInfo |
+| onReward | 下发激励视频回调 | ATAdInfo |
+
+#### ATAdInfo 回调参数说明
 | 参数值 | 描述 |
 | :----: | :----: |
-| onRewardedVideoAdFailed | 广告加载失败 |
-| onRewardedVideoAdPlayStart | 广告刷新回调 |
-| onRewardedVideoAdPlayEnd | 广告播放结束 |
-| onRewardedVideoAdPlayFailed | 广告播放失败 |
-| onRewardedVideoAdClosed | 广告关闭回调 |
-| onRewardedVideoAdPlayClicked | 广告点击回调 |
-| onReward | 下发激励视频回调 |
+| id | 获取 每次展示广告时生成的独立ID |
+| publisher_revenue | 获取 展示收益 |
+| currency | 获取 货币单位 |
+| country | 获取 国家代码 |
+| adunit_id | 获取 TopOn广告位ID |
+| adunit_format | 获取 广告类型，包括："Native"、"RewardedVideo"、"Banner" 、"Interstitial"、"Splash" |
+| precision | 获取 ECPM精度 |
+| network_type | 获取 Network类型、"Network"：第三方广告平台、"Cross_Promotion"：交互推广、"Adx"：暂未支持 |
+| network_placement_id | 获取 Network的广告位ID |
+| ecpm_level | 获取 广告源的eCPM层级，头部竞价广告源默认为0 |
+| segment_id | 获取 流量分组ID |
+| scenario_id | 获取 广告场景ID，仅Rewarded Video&Interstitial支持 |
+| scenario_reward_name | 获取 广告场景的激励名称，仅Rewarded Video支持 |
+| scenario_reward_number | 获取 广告场景的激励数量，仅Rewarded Video支持 |
+| channel | 获取渠道信息 |
+| sub_channel | 获取 子渠道信息 |
+| custom_rule | 获取 Placement+App维度的自定义规则的Json字符串 |
+| network_firm_id | 获取 广告平台对应的ID，用于区分广告平台 |
+| adsource_id | 获取 广告源ID |
+| adsource_index | 获取 当前广告源在WaterFall中的排序（从0开始，0优先级最高) |
+| adsource_price | 获取 eCPM |
+| adsource_isheaderbidding | 是否为头部竞价的广告源，1：是，2：否 |
+
 
 
 
