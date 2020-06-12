@@ -59,24 +59,12 @@ class RewardVideo {
     void init() {
         mRewardVideoAd = new ATRewardVideoAd(activity, mCodeId);
         /*
-        ** 判断广告组件是否可展示，否则执行加载方法
-         */
-        if(!mRewardVideoAd.isAdReady()){
-            mRewardVideoAd.load();
-        }
-    }
-
-    /*
-    ** 获取广告信息
-     */
-    void showAd() {
-        /*
-        ** 设置激励视频广告回调监听
-        *  将回调数据并发送给 flutter
+         ** 设置激励视频广告回调监听
+         *  将回调数据并发送给 flutter
          */
         mRewardVideoAd.setAdListener(new ATRewardVideoListener() {
             /*
-            ** 广告加载成功回调
+             ** 广告加载成功回调
              */
             @Override
             public void onRewardedVideoAdLoaded() {
@@ -84,7 +72,7 @@ class RewardVideo {
             }
 
             /*
-            ** 广告加载失败回调
+             ** 广告加载失败回调
              */
             @Override
             public void onRewardedVideoAdFailed(AdError errorCode) {
@@ -96,7 +84,7 @@ class RewardVideo {
             }
 
             /*
-            ** 广告刷新回调
+             ** 广告刷新回调
              */
             @Override
             public void onRewardedVideoAdPlayStart(ATAdInfo entity) {
@@ -108,7 +96,7 @@ class RewardVideo {
             }
 
             /*
-            ** 广告播放结束回调
+             ** 广告播放结束回调
              */
             @Override
             public void onRewardedVideoAdPlayEnd(ATAdInfo entity) {
@@ -120,7 +108,7 @@ class RewardVideo {
             }
 
             /*
-            ** 广告播放失败回调
+             ** 广告播放失败回调
              */
             @Override
             public void onRewardedVideoAdPlayFailed(AdError errorCode, ATAdInfo entity) {
@@ -133,7 +121,7 @@ class RewardVideo {
             }
 
             /*
-            ** 广告关闭回调
+             ** 广告关闭回调
              */
             @Override
             public void onRewardedVideoAdClosed(ATAdInfo entity) {
@@ -146,7 +134,7 @@ class RewardVideo {
             }
 
             /*
-            ** 广告点击回调
+             ** 广告点击回调
              */
             @Override
             public void onRewardedVideoAdPlayClicked(ATAdInfo entity) {
@@ -158,7 +146,7 @@ class RewardVideo {
             }
 
             /*
-            ** 下发激励的时候会回调
+             ** 下发激励的时候会回调
              */
             @Override
             public void onReward(ATAdInfo entity) {
@@ -169,6 +157,18 @@ class RewardVideo {
                 _channel.invokeMethod("onRewardResponse", rewardVideoCallBack);
             }
         });
+        /*
+        ** 判断广告组件是否可展示，否则执行加载方法
+         */
+        if(!mRewardVideoAd.isAdReady()){
+            mRewardVideoAd.load();
+        }
+    }
+
+    /*
+    ** 获取广告信息
+     */
+    void showAd() {
 
         /*
         ** 显示广告组件
