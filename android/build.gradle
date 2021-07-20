@@ -1,0 +1,46 @@
+group 'com.cat.toponad.toponad'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs project(':toponad').file('libs')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+}
+
+dependencies {
+    api(name:'anythink_core', ext:'aar')
+    api(name:'anythink_china_core', ext:'aar')
+    api(name:'open_ad_sdk_3.6.1.4', ext:'aar')
+    api(name:'tramini_sdk', ext:'aar')
+    api(name:'anythink_rewardvideo', ext:'aar')
+    api(name:'anythink_banner', ext:'aar')
+    api(name:'anythink_network_pangle_china', ext:'aar')
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.browser:browser:1.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+}
